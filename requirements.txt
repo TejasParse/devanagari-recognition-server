@@ -6,3 +6,4 @@ fastapi
 numpy
 pandas
 opencv-python
+python-multipart
