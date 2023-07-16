@@ -10,7 +10,6 @@ from torchvision import datasets, transforms
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from inputData import InputData
 import numpy as np
 import cv2
 import pickle
