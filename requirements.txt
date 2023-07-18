@@ -5,6 +5,6 @@ uvicorn
 fastapi
 numpy
 pandas
-opencv-python
+opencv-python-headless
 python-multipart
 gunicorn
