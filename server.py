@@ -83,19 +83,19 @@ async def predict_banknote(file:UploadFile=File(...)):
 
     transformedImage = torch.unsqueeze(transform(pil_image), 0)
     print(transformedImage.shape)
-    # prediction = model(transformedImage)
-    # _, predicted = torch.max(prediction.data, 1)
-    # print("Prediction: ", prediction)
-    # # print(prediction, predicted.item())
-    # return {
-    #     "predictedNumber": predicted.item(),
-    # }
+    prediction = model(transformedImage)
+    _, predicted = torch.max(prediction.data, 1)
+    print("Prediction: ", prediction)
+    # print(prediction, predicted.item())
+    return {
+        "predictedNumber": predicted.item(),
+    }
 
     # print(model)
 
-    return {
-        "predictedNumber": 11
-    }
+    # return {
+    #     "predictedNumber": 11
+    # }
 
 # 5. Run the API with uvicorn
 #    Will run on http://127.0.0.1:8000
