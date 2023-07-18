@@ -87,11 +87,12 @@ async def predict_banknote(file:UploadFile=File(...)):
     _, predicted = torch.max(prediction.data, 1)
     print("Prediction: ", prediction)
     # print(prediction, predicted.item())
+    print(model)
+
     return {
         "predictedNumber": predicted.item(),
     }
 
-    # print(model)
 
     # return {
     #     "predictedNumber": 11
