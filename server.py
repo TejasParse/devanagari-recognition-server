@@ -85,8 +85,8 @@ async def predict_banknote(file:UploadFile=File(...)):
 
     pil_image = load_pil_image(await file.read())
 
-    # transformedImage = torch.unsqueeze(transform(pil_image), 0)
-    # # print(transformedImage.shape)
+    transformedImage = torch.unsqueeze(transform(pil_image), 0)
+    print(transformedImage.shape)
     # prediction = model(transformedImage)
     # _, predicted = torch.max(prediction.data, 1)
     # print("Prediction: ", prediction)
@@ -95,10 +95,10 @@ async def predict_banknote(file:UploadFile=File(...)):
     #     "predictedNumber": predicted.item(),
     # }
 
-    print(model)
+    # print(model)
 
     return {
-        "prefictedNumber": 11
+        "predictedNumber": 11
     }
 
 @app.get('/{name}')
