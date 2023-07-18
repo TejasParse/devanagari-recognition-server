@@ -19,7 +19,7 @@ import pandas as pd
 
 app = FastAPI()
 
-origins = ["https://shimmering-frangipane-5bd0d2.netlify.app/"]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
