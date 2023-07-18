@@ -79,10 +79,6 @@ def load_pil_image(data):
 @app.post('/predict')
 async def predict_banknote(file:UploadFile=File(...)):
 
-    # file_location = f"./saved_file/{file.filename}"
-    # with open(file_location, "wb+") as file_object:
-    #     file_object.write(file.read())
-
     pil_image = load_pil_image(await file.read())
 
     transformedImage = torch.unsqueeze(transform(pil_image), 0)
