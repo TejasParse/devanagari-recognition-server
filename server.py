@@ -19,7 +19,7 @@ import pandas as pd
 
 app = FastAPI()
 
-origins = ["https://64b406138584bd41eea70886--shimmering-frangipane-5bd0d2.netlify.app"]
+origins = ["https://shimmering-frangipane-5bd0d2.netlify.app/"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -96,10 +96,6 @@ async def predict_banknote(file:UploadFile=File(...)):
     return {
         "predictedNumber": 11
     }
-
-@app.get('/{name}')
-def get_name(name: str):
-    return {'Welcome To Krish Youtube Channel': f'{name}'}
 
 # 5. Run the API with uvicorn
 #    Will run on http://127.0.0.1:8000
