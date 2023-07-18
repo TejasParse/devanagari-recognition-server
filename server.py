@@ -83,18 +83,23 @@ async def predict_banknote(file:UploadFile=File(...)):
     # with open(file_location, "wb+") as file_object:
     #     file_object.write(file.read())
 
-    pil_image = load_pil_image(await file.read())
+    # pil_image = load_pil_image(await file.read())
 
-    transformedImage = torch.unsqueeze(transform(pil_image), 0)
-    # print(transformedImage.shape)
-    prediction = model(transformedImage)
-    _, predicted = torch.max(prediction.data, 1)
-    print("Prediction: ", prediction)
-    # print(prediction, predicted.item())
+    # transformedImage = torch.unsqueeze(transform(pil_image), 0)
+    # # print(transformedImage.shape)
+    # prediction = model(transformedImage)
+    # _, predicted = torch.max(prediction.data, 1)
+    # print("Prediction: ", prediction)
+    # # print(prediction, predicted.item())
+    # return {
+    #     "predictedNumber": predicted.item(),
+    # }
+
+    print(model)
+
     return {
-        "predictedNumber": predicted.item(),
+        "prefictedNumber": 11
     }
-
 
 @app.get('/{name}')
 def get_name(name: str):
