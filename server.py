@@ -83,7 +83,7 @@ async def predict_banknote(file:UploadFile=File(...)):
     # with open(file_location, "wb+") as file_object:
     #     file_object.write(file.read())
 
-    # pil_image = load_pil_image(await file.read())
+    pil_image = load_pil_image(await file.read())
 
     # transformedImage = torch.unsqueeze(transform(pil_image), 0)
     # # print(transformedImage.shape)
